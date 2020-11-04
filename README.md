@@ -17,14 +17,14 @@
 
 |Column             |Type      |Options                       |
 |-------------------|----------|------------------------------|
-|item_name          |string    |null: false                   |
+|name               |string    |null: false                   |
 |price              |integer   |null: false                   |
 |exhibitor          |string    |null: false                   |
 |category           |string    |null: false                   |
-|item_status        |text      |null: false                   |
-|delivery-charge    |string    |null: false                   |  
-|delivery_source    |string    |null: false                   | 
-|delivery_estimated |string    |null: false                   |
+|status             |text      |null: false                   |
+|delivery_charge    |integer   |null: false                   |  
+|delivery_source    |integer   |null: false                   | 
+|delivery_estimated |integer   |null: false                   |
 |user               |references|null: false, foreign_key: true|
 
 ## ordersテーブル
