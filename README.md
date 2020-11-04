@@ -2,12 +2,17 @@
 
 ## usersテーブル
 
-|Column   |Type     |Options      |
-|---------|---------|-------------|
-|email    |string   |null: false  |
-|password |string   |null: false  |
-|name     |string   |null: false  |
-
+|Column              |Type        |Options      |
+|--------------------|------------|-------------|
+|email               |string      |null: false  |
+|password            |string      |null: false  |
+|nickname            |string      |null: false  |
+|nickname            |string      |null: false  |
+|family_name         |string      |null: false  |
+|first_name          |string      |null: false  |
+|katakana_family_name|string      |null: false  |
+|katakana_family_name|string      |null: false  |
+|birthday            |date        |null: false  |
 ## itemsテーブル
 
 |Column             |Type      |Options                       |
