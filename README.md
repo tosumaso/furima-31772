@@ -5,8 +5,7 @@
 |Column              |Type        |Options      |
 |--------------------|------------|-------------|
 |email               |string      |null: false  |
-|password            |string      |null: false  |
-|nickname            |string      |null: false  |
+|encrypted_password  |string      |null: false  |
 |nickname            |string      |null: false  |
 |family_name         |string      |null: false  |
 |first_name          |string      |null: false  |
@@ -21,17 +20,17 @@ user has_many :orders
 
 ## itemsテーブル
 
-|Column             |Type      |Options                       |
-|-------------------|----------|------------------------------|
-|name               |string    |null: false                   |
-|price              |integer   |null: false                   |
-|exhibitor          |string    |null: false                   |
-|category           |string    |null: false                   |
-|status             |text      |null: false                   |
-|delivery_charge    |integer   |null: false                   |  
-|delivery_source    |integer   |null: false                   | 
-|delivery_estimated |integer   |null: false                   |
-|user               |references|null: false, foreign_key: true|
+|Column                |Type      |Options                       |
+|----------------------|----------|------------------------------|
+|name                  |string    |null: false                   |
+|price                 |integer   |null: false                   |
+|exhibitor             |string    |null: false                   |
+|category_id           |integer   |null: false                   |
+|status_id             |integer   |null: false                   |
+|delivery_charge_id    |integer   |null: false                   |  
+|delivery_source_id    |integer   |null: false                   | 
+|delivery_estimated_id |integer   |null: false                   |
+|user                  |references|null: false, foreign_key: true|
 
 ### Association
 
