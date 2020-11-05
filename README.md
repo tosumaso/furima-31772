@@ -10,13 +10,13 @@
 |family_name         |string      |null: false  |
 |first_name          |string      |null: false  |
 |katakana_family_name|string      |null: false  |
-|katakana_family_name|string      |null: false  |
+|katakana_first_name |string      |null: false  |
 |birthday            |date        |null: false  |
 
 ### Association
 
-user has_many :items
-user has_many :orders
+has_many :items
+has_many :orders
 
 ## itemsテーブル
 
@@ -24,7 +24,7 @@ user has_many :orders
 |----------------------|----------|------------------------------|
 |name                  |string    |null: false                   |
 |price                 |integer   |null: false                   |
-|exhibitor             |string    |null: false                   |
+|item_detail           |text      |null: false                   |
 |category_id           |integer   |null: false                   |
 |status_id             |integer   |null: false                   |
 |delivery_charge_id    |integer   |null: false                   |  
@@ -34,8 +34,8 @@ user has_many :orders
 
 ### Association
 
-item belongs_to :user
-item has_one :order
+belongs_to :user
+has_one :order
 
 ## ordersテーブル
 
@@ -46,9 +46,9 @@ item has_one :order
 
 ### Association
 
-order belongs_to :user
-order belongs_to :item
-order has_one :shipping_address
+belongs_to :user
+belongs_to :item
+has_one :shipping_address
 
 # shipping_addressesテーブル
 
@@ -64,4 +64,4 @@ order has_one :shipping_address
 
 ### Association
 
-shipping_address belongs_to :order
+belongs_to :order
