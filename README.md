@@ -13,6 +13,7 @@
 |katakana_family_name|string      |null: false  |
 |katakana_family_name|string      |null: false  |
 |birthday            |date        |null: false  |
+
 ## itemsテーブル
 
 |Column             |Type      |Options                       |
@@ -31,9 +32,6 @@
 
 |Column        |Type      |Options                       |
 |--------------|----------|------------------------------|
-|who_bought    |string    |null: false                   |
-|when_bought   |date      |null: false                   |
-|what_bought   |string    |null: false                   |
 |user          |references|null: false, foreign_key: true|
 
 # shipping_addressesテーブル
