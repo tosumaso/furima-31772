@@ -38,13 +38,12 @@
 
 |Column             |Type      |Options                       |
 |-------------------|----------|------------------------------|
-|postal_code        |integer   |null: false                   |
-|prefecture         |string    |null: false                   |
+|postal_code        |string    |null: false                   |
+|prefecture_id      |integer   |null: false                   |
 |city               |string    |null: false                   |
 |street_number      |string    |null: false                   |
-|building_number    |text      |                              |
-|phone_number       |integer   |null: false                   |
-|user               |references|null: false, foreign_key: true|
+|building_number    |string    |                              |
+|phone_number       |string    |null: false                   |
 |order              |references|null: false, foreign_key: true|
 
 ### Association
