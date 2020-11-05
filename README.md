@@ -14,6 +14,11 @@
 |katakana_family_name|string      |null: false  |
 |birthday            |date        |null: false  |
 
+### Association
+
+user has_many :items
+user has_many :orders
+
 ## itemsテーブル
 
 |Column             |Type      |Options                       |
@@ -28,11 +33,23 @@
 |delivery_estimated |integer   |null: false                   |
 |user               |references|null: false, foreign_key: true|
 
+### Association
+
+item belongs_to :user
+item has_one :order
+
 ## ordersテーブル
 
 |Column        |Type      |Options                       |
 |--------------|----------|------------------------------|
 |user          |references|null: false, foreign_key: true|
+|item          |references|null: false, foreign_key: true|
+
+### Association
+
+order belongs_to :user
+order belongs_to :item
+order has_one :shipping_address
 
 # shipping_addressesテーブル
 
@@ -47,14 +64,5 @@
 |order              |references|null: false, foreign_key: true|
 
 ### Association
-
-user has_many :items
-user has_many :shipping_addresses
-user has_many :orders
-
-item belongs_to :user
-
-order belongs_to :user
-order has_one :shipping_address
 
 shipping_address belongs_to :order
