@@ -62,9 +62,23 @@ describe User do
         expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
       end
 
-      it 'passwordが半角英数字ではない場合' do
+      it 'passwordが英文字のみの場合' do
         @user.password ="lettersonly"
         @user.password_confirmation ="lettersonly"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password is invalid")
+      end
+
+      it 'passwordが数字のみの場合' do
+        @user.password = "123456789"
+        @user.password_confirmation = "123456789"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password is invalid")
+      end
+
+      it 'passwordが全角の場合' do
+        @user.password ="hfryrpc"
+        @user.password_confirmation = "hfryrpc"
         @user.valid?
         expect(@user.errors.full_messages).to include("Password is invalid")
       end
