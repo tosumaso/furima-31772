@@ -77,8 +77,8 @@ describe User do
       end
 
       it 'passwordが全角の場合' do
-        @user.password ="hfryrpc"
-        @user.password_confirmation = "hfryrpc"
+        @user.password ="hfryrpc１２３"
+        @user.password_confirmation = "hfryrpc１２３"
         @user.valid?
         expect(@user.errors.full_messages).to include("Password is invalid")
       end
