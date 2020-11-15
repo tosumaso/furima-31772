@@ -22,10 +22,6 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.phone_number = '00000000000'
         expect(@order_address).to be_valid
       end
-
-      it 'tokenがある場合' do
-        expect(@order_address).to be_valid
-      end
     end
 
     context '購入できない時' do
