@@ -10,6 +10,10 @@ RSpec.describe OrderAddress, type: :model do
       it 'postal_code,prefecture,city,street_number,building_number,phone_numberが入力された場合' do
         expect(@order_address).to be_valid
       end
+      it 'building_number以外が入力された場合' do
+        @order_address.building_number = ''
+        expect(@order_address).to be_valid
+      end
     end
 
     context '購入できない時' do
