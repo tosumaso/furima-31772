@@ -7,7 +7,6 @@ class Item < ApplicationRecord
   belongs_to :delivery_estimated
   has_one_attached :image
   belongs_to :user
-  has_one :order, dependent: :destroy
 
   validate :image_validation
 
